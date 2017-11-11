@@ -9,5 +9,6 @@ cc_library(
     hdrs = glob(["lib/fuzzer/*.def"]),
     linkopts = [
         "-lpthread",
+        "-lm",
     ],
 )
