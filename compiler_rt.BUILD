@@ -11,4 +11,5 @@ cc_library(
         "-lpthread",
         "-lm",
     ],
+    nocopts = "-fsanitize=.+",
 )
