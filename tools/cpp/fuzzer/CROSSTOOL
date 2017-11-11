@@ -2,6 +2,26 @@ major_version: "local"
 minor_version: ""
 default_target_cpu: "same_as_host"
 
+default_setting {
+  name: "fuzzer"
+  default_value: false
+}
+
+default_setting {
+  name: "asan"
+  default_value: false
+}
+
+default_setting {
+  name: "ubsan"
+  default_value: false
+}
+
+default_setting {
+  name: "leaksan"
+  default_value: false
+}
+
 default_toolchain {
   cpu: "k8"
   toolchain_identifier: "local_linux"
@@ -132,4 +152,52 @@ toolchain {
 
   }
   linking_mode_flags { mode: DYNAMIC }
+
+  optional_compiler_flag {
+    default_setting_name: "fuzzer"
+    flag: "-fsanitize-coverage=trace-pc-guard"
+  }
+  optional_cxx_flag {
+    default_setting_name: "fuzzer"
+    flag: "-fsanitize-coverage=trace-pc-guard"
+  }
+
+  optional_compiler_flag {
+    default_setting_name: "asan"
+    flag: "-fsanitize=address"
+  }
+  optional_cxx_flag {
+    default_setting_name: "asan"
+    flag: "-fsanitize=address"
+  }
+  optional_linker_flag {
+    default_setting_name: "asan"
+    flag: "-fsanitize=address"
+  }
+
+  optional_compiler_flag {
+    default_setting_name: "ubsan"
+    flag: "-fsanitize=undefined"
+  }
+  optional_cxx_flag {
+    default_setting_name: "ubsan"
+    flag: "-fsanitize=undefined"
+  }
+  optional_linker_flag {
+    default_setting_name: "ubsan"
+    flag: "external/clang_5_0_0_linux/lib/clang/5.0.0/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a"
+  }
+
+  optional_compiler_flag {
+    default_setting_name: "leaksan"
+    flag: "-fsanitize=leak"
+  }
+  optional_cxx_flag {
+    default_setting_name: "leaksan"
+    flag: "-fsanitize=leak"
+  }
+  optional_linker_flag {
+    default_setting_name: "leaksan"
+    flag: "-fsanitize=leak"
+  }
 }
