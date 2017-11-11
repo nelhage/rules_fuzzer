@@ -18,6 +18,15 @@ new_http_archive(
     url = "https://releases.llvm.org/5.0.0/clang+llvm-5.0.0-linux-x86_64-ubuntu16.04.tar.xz",
 )
 
+new_http_archive(
+    name = "clang_compiler_rt",
+    build_file = "//:compiler_rt.BUILD",
+    sha256 = "f3a84da598b1b17153b9afcc8ee6376e5d2cc7da728d2f3fda90d98fc93c4bec",
+    strip_prefix = "compiler-rt-42df8011b906358522219a262e6fbd2e47e7a3d6/",
+    type = "zip",
+    url = "https://github.com/llvm-mirror/compiler-rt/archive/42df8011b906358522219a262e6fbd2e47e7a3d6.zip",
+)
+
 # new_local_repository(
 #     name = "clang_5_0_0_linux",
 #     build_file = "//:clang.BUILD",
