@@ -1,0 +1,2 @@
+#!/bin/bash
+exec external/clang_5_0_0_linux/bin/clang "$@"
