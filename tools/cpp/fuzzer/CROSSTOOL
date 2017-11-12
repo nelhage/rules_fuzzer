@@ -113,12 +113,6 @@ toolchain {
     mode: DBG
     # Enable debug symbols.
 
-    # enable self-checking capabilities of libcpp
-    compiler_flag: "-D_LIBCPP_DEBUG2=2"
-
-    # enable self-checking capabilities of glibc
-    compiler_flag: "-D_GLIBCXX_DEBUG"
-
     compiler_flag: "-fno-limit-debug-info"
 
     compiler_flag: "-g3"
