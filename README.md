@@ -20,7 +20,7 @@ To use:
   `main` method.
 
 - Build using the included `clang`, via
-  `--crosstool_top=//tools/clang:toolchain`, and enabling the fuzzer
+  `--crosstool_top=@com_nelhage_rules_fuzzer//tools/cpp/fuzzer:toolchain`, and enabling the fuzzer
   instrumentation with `--features=fuzzer`.
 
   You can optionally also enable the [clang sanitizers][sanitizers],
