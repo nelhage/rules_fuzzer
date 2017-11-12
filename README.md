@@ -12,8 +12,8 @@ To use:
 - Add this repository as a bazel external
 - In your `WORKSPACE`, load and call `fuzzer_externals`:
 
-    load("@com_nelhage_fuzzer//:fuzzer.bzl", "fuzzer_externals")
-    fuzzer_externals()
+        load("@com_nelhage_fuzzer//:fuzzer.bzl", "fuzzer_externals")
+        fuzzer_externals()
 
 - Define your fuzz target as a `cc_binary` with
   `@clang_compiler_rt//:fuzzer` in `deps`. This target will define a
