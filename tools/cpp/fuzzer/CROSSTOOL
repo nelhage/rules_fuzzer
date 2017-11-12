@@ -178,14 +178,19 @@ toolchain {
   optional_compiler_flag {
     default_setting_name: "ubsan"
     flag: "-fsanitize=undefined"
+    flag: "-fno-sanitize-recover=undefined"
   }
   optional_cxx_flag {
     default_setting_name: "ubsan"
     flag: "-fsanitize=undefined"
+    flag: "-fno-sanitize-recover=undefined"
   }
   optional_linker_flag {
     default_setting_name: "ubsan"
+    flag: "-ldl"
+    flag: "-lrt"
     flag: "external/clang_5_0_0_linux/lib/clang/5.0.0/lib/linux/libclang_rt.ubsan_standalone_cxx-x86_64.a"
+    flag: "external/clang_5_0_0_linux/lib/clang/5.0.0/lib/linux/libclang_rt.ubsan_standalone-x86_64.a"
   }
 
   optional_compiler_flag {
